@@ -1,0 +1,42 @@
+body{
+           height: 100vh;
+         margin:0;
+        padding: 0;
+     }
+      form{
+       
+        font-weight: bold;
+      }
+      .ee{
+            background: #fafaf8;
+        height: 100vh;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+
+
+      }
+      .qqq {
+      background-color: rgb(19, 19, 19);
+      }
+      .yyy{
+        background-color: rgb(6, 6, 6);
+      }
+      .rtr{
+        font-size: 12px;
+         color: rgb(10, 9, 9);
+          background-color: rgb(227, 227, 10);
+          border-radius: 15px;
+           width: 270px;
+            height: 30px; 
+            border: none;
+      }
+        .aoe{
+         color: rgb(247, 248, 248);
+          background-color:rgb(19, 19, 19);
+           font-size: 13px;
+           border-radius: 17px;
+            border: none;
+                width: 80px; 
+             height: 30px;
+       }

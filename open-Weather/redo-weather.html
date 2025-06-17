@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="redo-weather.css" />
+    <link rel="icon" type="image.png" href="images/icon-logo.png" />
+
+    <title>open weather</title>
+  </head>
+
+  <body>
+    <div class="app-wrap">
+      <header>
+        <input
+          type="text"
+          autocomplete="off"
+          class="search-box"
+          placeholder="search for city..."
+          required
+        />
+        <button class="button">Search</button>
+      </header>
+
+      <div id="error-message" class="no-network">INTERNET DISCONNECTED.</div>
+
+      <div class="error">
+        <h3>Invalid City Name</h3>
+      </div>
+    </div>
+    <div class="the-icon">
+      <img src="images/Cloude.png"class="weather-icon" alt="" />
+    </div>
+
+    <div class="container">
+      <div class="current-info">
+        <div class="data-container">
+          <div class="date-container">
+            <div class="time" id="time">
+              2:58:4 <span id="am-pm" class="am-pm">:PM</span>
+            </div>
+          </div>
+          <div class="date" id="date">MONDAY, 24 JUNE</div>
+
+          <div class="others" id="current-weather-item">
+            <div class="weather-item">
+              <p>Humidity</p>
+              <p class="humidity">95.2%</p>
+            </div>
+
+            <div class="weather-item">
+              <p>Pressure</p>
+              <div class="pressure">921</div>
+            </div>
+
+            <div class="weather-item">
+              <p>Wind speed</p>
+              <div class="wind">222%</div>
+            </div>
+
+            <div class="weather-item">
+              <p>Sunrise</p>
+              <div class="Sunrise">
+                2:58<span id="am-pmm" class="am-pmm">:AM</span>
+              </div>
+            </div>
+
+            <div class="weather-item">
+              <p>Sunset</p>
+              <div class="Sunset">
+                7:42 <span id="am-pmm" class="am-pmm">:PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="parent-container">
+          <div class="time-zone" id="time-zone">Rivers/Port Harcourt</div>
+          <div id="country" class="country">Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather">
+      <div class="temp">24<span>°c</span></div>
+      <div class="desc">overcast-cloud</div>
+      <div class="hi-low">88°c/34°c</div>
+    </div>
+
+    <script>
+      const errorMessageDiv = document.getElementById("error-message");
+
+      function updateOnlineStatus() {
+        if (navigator.onLine) {
+          errorMessageDiv.style.display = "none";
+        } else {
+          errorMessageDiv.textContent = "INTERNET DISCONNECTED.";
+          errorMessageDiv.style.display = "block";
+        }
+      }
+
+      window.addEventListener("online", updateOnlineStatus);
+      window.addEventListener("offline", updateOnlineStatus);
+      updateOnlineStatus(); // Check on page load
+    </script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"
+      integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="redo-weather.js"></script>
+  </body>
+</html>
